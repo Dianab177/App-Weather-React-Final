@@ -1,5 +1,5 @@
 import React from "react";
-import "./Weather.css";
+import './Weather.css';
 
 const Weather = () => {
   return (
@@ -11,6 +11,7 @@ const Weather = () => {
               type="search"
               placeholder="Enter a city..."
               className="form-control"
+              autoFocus="on"
             />
           </div>
           <div className="col-3">
@@ -23,13 +24,19 @@ const Weather = () => {
         <li>Thursday 13:20</li>
         <li>Cloudy</li>
       </ul>
-      <div className="row">
+      <div className="row mt-3">
         <div className="col-6">
+          <div className="clearfix">
           <img
             src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
             alt="Cloudy"
+            className="float-left"
           />
-          6ºC
+          <div className="float-left">
+          <span className="temperature">6</span>
+          <span className="unit">ºC</span>
+          </div>
+         </div>
         </div>
         <div className="col-6">
           <ul>

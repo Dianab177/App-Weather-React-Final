@@ -7,9 +7,9 @@ function App() {
     <div className="App">
       <div class="container">
         <Weather/>
-         <small class="weather-link">
+         <footer class="weather-link">
          <a href="https://github.com/Dianab177/App-Weather-React-Final" target="_blank" title="link to github"  rel="noopener noreferrer">Open-source code</a>, by <a href="https://www.linkedin.com/in/dianaborrajo/">Diana Borrajo</a> 
-         </small>
+         </footer>
          </div>
     </div>
   );
