@@ -11,7 +11,7 @@ const Weather = (props) => {
   setWeatherData({
     ready: true,
     date: new Date(response.data.dt * 1000),
-    icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+    icon: response.data.weather[0].icon,
     temperature: response.data.main.temp,
     wind:  Math.round(response.data.wind.speed),
     humidity: response.data.main.humidity,
