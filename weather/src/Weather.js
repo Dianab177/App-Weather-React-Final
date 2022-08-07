@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Weather.css';
 import axios from "axios";
-
+import WeatherForecast from './WeatherForecast';
 import WeatherInfo from './WeatherInfo';
 
 const Weather = (props) => {
@@ -54,6 +54,7 @@ if(weatherData.ready){
       </div>
     </form>
     <WeatherInfo data = {weatherData} />
+    <WeatherForecast />
    </div> 
   );
 } else {
