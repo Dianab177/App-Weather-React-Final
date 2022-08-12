@@ -6,21 +6,21 @@ import WeatherForecatsDay from "./WeatherForecatsDay";
 const WeatherForecast = (props) => {
   let [loaded, setLoaded] = useState(false);
   let [forecast, setForecast] = useState(null);
-  
-  useEffect(()=>{
-setLoaded(false);
+
+  useEffect(() => {
+    setLoaded(false);
   }, [props.coord]);
 
   function handleResponse(response) {
     setLoaded(true);
     setForecast(response.data.daily);
-    
+    console.log(response.data);
   }
   function load() {
     let apiKey = "38a4b4ab7fe27a1d5c59088c9b79826b";
     let lon = props.coord.lon;
     let lat = props.coord.lat;
-    let urlForescat = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&
+    let urlForescat = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&
     lon=${lon}&appid=${apiKey}&units=metric`;
 
     axios.get(urlForescat).then(handleResponse);
@@ -37,14 +37,15 @@ setLoaded(false);
                   <WeatherForecatsDay data={dailyForecast} />
                 </div>
               );
-            }else {
-              return null;}
+            } else {
+              return null;
+            }
           })}
         </div>
       </div>
     );
   } else {
-    load()
+    load();
 
     return null;
   }
