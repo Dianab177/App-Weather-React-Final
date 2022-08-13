@@ -20,8 +20,7 @@ const WeatherForecast = (props) => {
     let apiKey = "38a4b4ab7fe27a1d5c59088c9b79826b";
     let lon = props.coord.lon;
     let lat = props.coord.lat;
-    let urlForescat = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&
-    lon=${lon}&appid=${apiKey}&units=metric`;
+    let urlForescat = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
 
     axios.get(urlForescat).then(handleResponse);
   }
